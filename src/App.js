@@ -9,8 +9,7 @@ export default function App() {
   const [cards, setCards] = useState([]);
 
   const addCard = () => {
-    //shortest way to generate unique numbers
-    setCards((prev) => [...prev, Math.floor(Date.now() + Math.random())]);
+    setCards((prev) => [...prev, Math.floor(Math.random() * 1000)]);
   };
 
   const sortCard = () => {
