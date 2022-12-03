@@ -1,0 +1,81 @@
+.header {
+  grid-area: 1 / 1 / 2 / 11;
+  background-color: #fefedf;
+}
+
+.main {
+  grid-area: 2 / 1 / 6 / 11;
+  overflow: auto;
+}
+
+.instructions {
+  grid-area: 1 / 11 / 7 / 13;
+  background-color: #fffbca;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  color: rgb(228, 55, 55);
+}
+
+.instructions > p {
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer {
+  grid-area: 6 / 1 / 7 / 11;
+  background-color: #fefedf;
+}
+
+.card {
+  height: 300px;
+  width: 300px;
+  background-image: url("https://img.freepik.com/free-vector/winter-blue-pink-gradient-background-vector_53876-117276.jpg?w=2000");
+  margin: 20px;
+  float: left;
+  overflow: auto;
+}
+
+.card > button {
+  float: right;
+  background-color: red;
+}
+
+.addButton,
+.sortButton {
+  margin: 30px;
+  width: 130px;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  height: 50px;
+  padding: 10px;
+  text-align: center;
+}
+.addButton {
+  background: #2ea44f;
+  border: 1px solid #2ea44f;
+}
+
+.sortButton {
+  background: #426eff;
+  border: 1px solid #426eff;
+}
+.addButton:hover,
+.addButton:active {
+  background-color: initial;
+  color: #2c974b;
+}
+
+.sortButton:hover,
+.sortButton:active {
+  background-color: initial;
+  color: #4e76f8;
+}

@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Footer from "./components/Footer";
+import Instructions from "./components/Instructions";
+import Header from "./components/Header";
+import Main from "./components/Main";
 
-function App() {
+export default function App() {
+  const [cards, setCards] = useState([]);
+
+  const addCard = () => {
+    //shortest way to generate unique numbers
+    setCards((prev) => [...prev, Math.floor(Date.now() + Math.random())]);
+  };
+
+  const sortCard = () => {
+    setCards((prev) => [...prev.sort((a, b) => a - b)]);
+  };
+
+  const deleteCard = (cardIndex) => {
+    setCards((prev) => prev.filter((card, index) => index !== cardIndex));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="parent">
+      <Header addCard={addCard} sortCard={sortCard} />
+      <Main cards={cards} deleteCard={deleteCard} />
+      <Instructions />
+      <Footer />
     </div>
   );
 }
-
-export default App;
